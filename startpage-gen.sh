@@ -1,7 +1,8 @@
 #!/bin/sh
 
-input="${1:-bookmarks.txt}"
-output="${2:-startpage.html}"
+PATH_DIR="/path/to/dir"
+input="${1:-$PATH_DIR/bookmarks.txt}"
+output="${2:-$PATH_DIR/startpage.html}"
 
 HASH_FILE="$input.sha256"
 

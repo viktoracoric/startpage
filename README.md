@@ -12,7 +12,7 @@
 * * * * * /path/to/repo/startpage-gen.sh
 ```
 
-5. Change path dir inside `changebg.sh`
+5. Change path dir inside `changebg.sh` and `startpage-gen.sh`
 6. Change the search engine within the `startpage-gen.sh` if you wish
 7. Set the startpage to open in new tab (on Brave it's `brave://settings/?search=New+tab+page+shows` -> homepage; `brave://settings/?search=Show+home+button`, enable, enter path to your generated .html file, disable)
 8. ???
