@@ -14,5 +14,5 @@
 
 5. Change the search engine within the `startpage-gen.sh` if you wish
 6. ???
-7. Set the startpage to open in new tab (on Brave it's brave://settings/?search=New+tab+page+shows -> homepage; brave://settings/?search=Show+home+button, enable, enter path to your generated .html file, disable)
+7. Set the startpage to open in new tab (on Brave it's `brave://settings/?search=New+tab+page+shows` -> homepage; `brave://settings/?search=Show+home+button`, enable, enter path to your generated .html file, disable)
 8. Profit
