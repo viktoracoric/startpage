@@ -5,11 +5,10 @@
 1. Populate `bookmarks.txt`, example provided in `bookmarks.txt.example` file
 2. Run `startpage-gen.sh`
 3. Add some nice background pictures inside `pix` folder
-4. Paste the following lines inside your crontab (startpage only regenerates if `bookmarks.txt` has changed)
+4. Paste the following line inside your crontab (startpage only regenerates if `bookmarks.txt` has changed)
 
 ```
-* * * * * /path/to/repo/startpage-gen.sh
-* * * * * /path/to/repo/changebg.sh
+* * * * * /path/to/repo/startpage-gen.sh && /path/to/repo/changebg.sh
 ```
 
 5. Change path dir inside `changebg.sh` and `startpage-gen.sh`
