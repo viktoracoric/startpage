@@ -160,9 +160,12 @@ cat <<'EOF'
 	    list-style-type: "+ " !important
         }
 
+	details > ul {
+            margin-top: 0.5rem ;
+	}
+
         details:hover,
         details:focus-visible {
-            background: var(--hover);
             color: var(--accent);
         }
 
