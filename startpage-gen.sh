@@ -5,14 +5,17 @@ input="${1:-$PATH_DIR/bookmarks.txt}"
 output="${2:-$PATH_DIR/startpage.html}"
 
 HASH_FILE="$input.sha256"
+SCRIPT_HASH_FILE="$0.sha256"
+current_hash=$(sha256sum "$input" | awk '{print $1}')
+script_hash=$(sha256sum "$0" | awk '{print $1}')
 
-if [ -f "$HASH_FILE" ]; then
-    if [ "$(sha256sum $input | awk '{print $1}')" = "$(cat "$HASH_FILE")" ]; then
+if [ -f "$HASH_FILE" ] && [ -f "$SCRIPT_HASH_FILE" ]; then
+    if [ "$current_hash" = "$(cat "$HASH_FILE")" ] && [ "$script_hash" = "$(cat "$SCRIPT_HASH_FILE")" ]; then
         exit 0
     fi
-else
-    sha256sum "$input" | awk '{print $1}' > "$HASH_FILE"
 fi
+echo "$current_hash" > "$HASH_FILE"
+echo "$script_hash" > "$SCRIPT_HASH_FILE"
 
 [ -f "$input" ] || {
     echo "error: file not found: $input" >&2
