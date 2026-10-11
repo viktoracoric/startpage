@@ -169,6 +169,37 @@ cat <<'EOF'
             color: var(--accent);
         }
 
+	details {
+            position: relative;
+        }
+
+        details[open] {
+            display: block;
+        }
+
+        details[open] > summary {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        details[open] > ul {
+            position: absolute;
+            top: 0;
+            left: calc(100% + 6px);
+            right: auto;
+            width: 340px;
+            margin-top: 0;
+            z-index: 100;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 6px;
+        }
+
+        section ul > li:nth-child(odd) details[open] > ul {
+            left: auto;
+            right: calc(100% + 6px);
+        }
+
         summary:hover,
         summary:focus-visible {
             background: var(--hover);
