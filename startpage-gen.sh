@@ -257,7 +257,7 @@ while IFS=';' read -r path title url || [ -n "$path" ]; do
     if [ "$new_category" != "$category" ]; then
         if [ -n "$group" ]; then
             printf '\t\t\t\t</ul>\n'
-            printf '\t\t\t</details>\n'
+            printf '\t\t\t</details name="menu">\n'
             printf '\t\t</li>\n'
         fi
 
@@ -278,13 +278,13 @@ while IFS=';' read -r path title url || [ -n "$path" ]; do
     if [ "$new_group" != "$group" ]; then
         if [ -n "$group" ]; then
             printf '\t\t\t\t</ul>\n'
-            printf '\t\t\t</details>\n'
+            printf '\t\t\t</details name="menu">\n'
             printf '\t\t</li>\n'
         fi
 
         if [ -n "$new_group" ]; then
             printf '\t\t<li>\n'
-            printf '\t\t\t<details>\n'
+            printf '\t\t\t<details name="menu">\n'
             printf '\t\t\t\t<summary>%s</summary>\n' \
                 "$(printf '%s' "$new_group" | escape)"
             printf '\t\t\t\t<ul>\n'
@@ -308,7 +308,7 @@ done < "$input"
 
 if [ -n "$group" ]; then
     printf '\t\t\t\t</ul>\n'
-    printf '\t\t\t</details>\n'
+    printf '\t\t\t</details name="menu">\n'
     printf '\t\t</li>\n'
 fi
 
